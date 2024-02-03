@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:io';
+
+import 'package:flutter/material.dart';
 import 'package:translator/translator.dart';
 
 class TranslatorApp extends StatefulWidget {
@@ -68,11 +69,9 @@ class _TranslatorAppState extends State<TranslatorApp> {
 
   @override
   void dispose() {
-
     super.dispose();
     controller.dispose();
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +80,7 @@ class _TranslatorAppState extends State<TranslatorApp> {
         centerTitle: true,
         flexibleSpace: Container(
             decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 50, 46, 165),
+          color: Color.fromARGB(255, 255, 255, 255),
         )),
         title: const Text(
           'Translator App',
@@ -89,7 +88,7 @@ class _TranslatorAppState extends State<TranslatorApp> {
               color: Colors.white, fontWeight: FontWeight.bold, fontSize: 28),
         ),
       ),
-      backgroundColor: const Color.fromARGB(255, 87, 104, 254),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: SingleChildScrollView(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -221,10 +220,7 @@ class _TranslatorAppState extends State<TranslatorApp> {
                         } else if (lang == languages[8]) {
                           to = languagescode[8];
                         }
-                        setState(() {
-                          // print(lang);
-                          // print(from);
-                        });
+                        setState(() {});
                       },
                     );
                   }).toList(),
@@ -254,15 +250,15 @@ class _TranslatorAppState extends State<TranslatorApp> {
           ),
           ElevatedButton(
               onPressed: translate,
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.indigo.shade900),
-                  fixedSize: const MaterialStatePropertyAll(Size(300, 45))),
+              style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(
+                      Color.fromARGB(255, 92, 141, 254)),
+                  fixedSize: MaterialStatePropertyAll(Size(300, 45))),
               child: isloading
                   ? const SizedBox.square(
                       dimension: 20,
                       child: CircularProgressIndicator(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 255, 255, 255),
                       ),
                     )
                   : const Text('Translate')),
